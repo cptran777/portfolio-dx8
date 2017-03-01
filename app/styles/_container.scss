@@ -1,0 +1,27 @@
+/* Contains the styling for the overall application container and application-wide
+ * elements
+ */
+
+html, body, .ember-application > .ember-view, #app-container, #app-inner-container {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  #app-container {
+    padding: 0 0 0 0;
+
+    #app-inner-container {
+      margin: 0 0 0 0;
+
+      #app-body {
+        height: 100%;
+        background: #ccbbee;
+      }
+
+      .body-padding {
+        padding-left: 7%;
+      }
+    }
+  }
+}
