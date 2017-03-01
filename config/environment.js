@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'portfolio-dx8',
+    modulePrefix: 'charlie-tran',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
