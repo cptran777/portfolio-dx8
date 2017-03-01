@@ -35,9 +35,9 @@ export default Ember.Component.extend({
 
   actions: {
     toggleSidebar(isCollapsed) {
-      const { 
-        collapsedClasses, 
-        expandedClasses 
+      const {
+        collapsedClasses,
+        expandedClasses
       } = this.getProperties('collapsedClasses', 'expandedClasses');
 
       this.set(

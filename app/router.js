@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('portfolio');
+  this.route('interests');
 });
 
 export default Router;

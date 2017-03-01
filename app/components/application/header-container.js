@@ -15,6 +15,7 @@ export default Ember.Component.extend({
    */
   isCollapsed: false,
   isExpanded: true,
+
   /**
    * Observes the isCollapsed property and assigns classNames when needed
    * @type {Function}
@@ -26,6 +27,10 @@ export default Ember.Component.extend({
       isExpanded: !isCollapsed,
     });
   }),
+
+  /**
+   * List of links to be rendered as well as tracking of the active link
+   */
 
   actions: {
     testAction() {
