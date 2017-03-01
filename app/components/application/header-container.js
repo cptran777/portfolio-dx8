@@ -35,6 +35,12 @@ export default Ember.Component.extend({
     });
   }),
 
+  selectedRoute: Ember.computed('currentRoute.activeRoute', function() {
+    const activeRoute = this.get('currentRoute.activeRoute');
+
+    return capitalize(activeRoute);
+  }),
+
   /**
    * List of links to be rendered as well as tracking of the active link
    * @return {Array} an array of objects
@@ -45,7 +51,7 @@ export default Ember.Component.extend({
 
     return directoryList.map(directory => ({
       val: directory,
-      message: directory,
+      message: capitalize(directory),
       selected: activeRoute === directory
     }));
   }),
