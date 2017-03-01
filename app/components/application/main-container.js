@@ -5,7 +5,7 @@ export default Ember.Component.extend({
    * List of classes that will compose the app-body <div> class
    * @type {Array}
    */
-  bodyClasses: ['col-xs-12', 'col-sm-10', 'col-md-10'],
+  bodyClasses: ['col-xs-12', 'col-sm-10', 'col-md-10', 'menu-expanded'],
 
   /**
    * Observes the body classes and combines them into a renderable string

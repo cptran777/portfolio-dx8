@@ -14,7 +14,7 @@ export default Ember.Component.extend({
    * @type {Boolean}
    */
   isCollapsed: false,
-  isExpanded:true,
+  isExpanded: true,
   /**
    * Observes the isCollapsed property and assigns classNames when needed
    * @type {Function}
@@ -23,15 +23,12 @@ export default Ember.Component.extend({
     const isCollapsed = this.get('isCollapsed');
 
     this.setProperties({
-      isExpandedXs: !isCollapsed,
-      isExpandedMd: !isCollapsed,
-      isExpandedSm: !isCollapsed
+      isExpanded: !isCollapsed,
     });
   }),
 
   actions: {
     testAction() {
-      console.log('action hit');
       this.toggleProperty('isCollapsed');
       this.get('toggleSidebar')(this.get('isCollapsed'));
     }

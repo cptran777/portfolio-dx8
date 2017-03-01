@@ -1,14 +1,76 @@
+@import '../variables';
+
 #header-container {
-  background-color: #eeffee;
+  background-color: $primary-color;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  overflow: auto;
   -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
        -o-transition: all 0.5s ease;
           transition: all 0.5s ease;
   z-index: 5;
+  padding: 0 15px 0 15px;
+
+  header {
+    height: 100%;
+
+    a.profile-icon {
+      color: $secondary-color;
+    }
+
+    a.profile-icon:hover {
+      color: $secondary-color-hover;
+    }
+
+    #profile-background {
+      position: absolute;
+      height: 20%;
+
+      #profile-background-img {
+        width: 100%;
+      }
+    }
+
+    #profile-container {
+      text-align: center;
+      padding-top: 40%;
+
+      #profile-img {
+        border-radius: 50%;
+        width: 70%;
+      }
+    }
+
+    #profile-banner {
+      text-align: center;
+
+      h1 {
+        font-size: 2.2vw;
+        text-decoration: underline;
+        color: $secondary-color;
+      }
+
+      h3 {
+        font-size: 1.8vw;
+        color: $secondary-color;
+      }
+    }
+
+    #profile-banner:hover {
+      cursor: pointer;
+    }
+
+    #profile-icons {
+      text-align: center;
+
+      a {
+        margin: 1% 3% 1% 3%;
+      }
+    }
+  }
 
   p {
     color: blue;
