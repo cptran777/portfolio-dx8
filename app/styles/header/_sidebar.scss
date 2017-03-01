@@ -25,6 +25,15 @@
       color: $secondary-color-hover;
     }
 
+    .toggle-menu {
+      color: white;
+      z-index: 10;
+    }
+
+    .toggle-menu:hover {
+      cursor: pointer;
+    }
+
     #profile-background {
       position: absolute;
       height: 20%;
@@ -36,7 +45,7 @@
 
     #profile-container {
       text-align: center;
-      padding-top: 40%;
+      padding-top: 35%;
 
       #profile-img {
         border-radius: 50%;
@@ -60,7 +69,7 @@
     }
 
     #profile-banner:hover {
-      cursor: pointer;
+      cursor: default;
     }
 
     #profile-icons {

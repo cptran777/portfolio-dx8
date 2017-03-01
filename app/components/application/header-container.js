@@ -31,6 +31,16 @@ export default Ember.Component.extend({
     testAction() {
       this.toggleProperty('isCollapsed');
       this.get('toggleSidebar')(this.get('isCollapsed'));
+    },
+
+    onCollapse() {
+      this.set('isCollapsed', true);
+      this.get('toggleSidebar')(true);
+    },
+
+    onExpand() {
+      this.set('isCollapsed', false);
+      this.get('toggleSidebar')(false);
     }
   }
 });

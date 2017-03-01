@@ -3,6 +3,10 @@
   <div id="profile-background">
     <img id="profile-background-img" src="assets/images/Personal-Logo.jpg" />
   </div>
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <i class="fa fa-angle-double-left fa-2x pull-right toggle-menu" 
+    aria-hidden="true" {{action "onCollapse"}}></i>
+  </div>
   <div id="profile-container" class="col-xs-12 col-sm-12 col-md-12">
     <img id="profile-img" src="assets/images/Profile.jpg" />
   </div>
@@ -19,6 +23,8 @@
     </a>
   </div>
 {{else}}
+  <i class="fa fa-angle-double-right fa-2x pull-right toggle-menu"
+  aria-hidden="true" {{action "onExpand"}}></i> 
   <a href="https://www.linkedin.com/in/charlie-tran" class="profile-icon">
     <i class="fa fa-linkedin-square fa-5x" aria-hidden="true"></i>
   </a>
