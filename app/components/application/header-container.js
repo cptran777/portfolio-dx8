@@ -7,18 +7,14 @@ export default Ember.Component.extend({
    * @type {Array}
    */
   classNameBindings: ['isCollapsed',
-                      'isExpandedXs:col-xs-12',
-                      'isExpandedSm:col-sm-4',
-                      'isExpandedMd:col-md-3'],
+                      'isExpanded'],
 
   /**
    * Whether the header component is collapsed or expanded
    * @type {Boolean}
    */
   isCollapsed: false,
-  isExpandedXs: true,
-  isExpandedSm: true,
-  isExpandedMd: true,
+  isExpanded:true,
   /**
    * Observes the isCollapsed property and assigns classNames when needed
    * @type {Function}
