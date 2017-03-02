@@ -1,4 +1,15 @@
-More stuff
-More stuff
-More stuff here look at me
+{{#if showCover}}
+  <div class="row cover-banner">
+  </div>
+{{/if}}
+<div class="row banner">
+  <div class="col-xs-12 col-sm-3 col-md-1 banner-img-container"
+  {{action (if showCover "onHideCover" "onShowCover")}}>
+    <img id="navbar-img" src="assets/images/Navbar-Image.jpg" />
+  </div>
+  More stuff
+  More stuff
+  More stuff here look at me
+</div>
+
 {{yield}}

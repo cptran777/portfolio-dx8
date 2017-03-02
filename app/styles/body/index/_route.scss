@@ -1,18 +1,42 @@
 @import '../../variables';
 
 #index-container {
+  @include smooth-transitions(0.5s);
   height: 100%;
-  padding-top: 85px;
 
   #index-page-header {
     @include smooth-transitions(0.5s);
+    background-color: white;
     position: absolute;
-    background-color: yellow;
     top: 0;
     left: 0;
     color: red;
     width: 100%;
-    height: 75px;
+    border-bottom: 1px solid $primary-grey-color;
+
+    .banner {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 1%;
+      background-color: yellow;
+      height: 100%;
+
+      .banner-img-container {
+        height: 75%;
+        text-align: center;
+        padding-bottom: 5px;
+        border-bottom: 5px solid $primary-color;
+      }
+
+      .banner-img-container {
+        cursor: pointer;
+        height: 50px;
+      }
+    }
+
+    #navbar-img {
+      height: 100%;
+    }
   }
 
   .header-expanded {
@@ -22,5 +46,23 @@
   .header-collapsed {
     padding-left: 7%;
   }
+
+  .show-cover {
+    height: 250px;
+  }
+
+  .hide-cover {
+    height: 75px;
+  }
 }
+
+#index-container.show-cover {
+  padding-top: 265px;
+}
+
+#index-container.hide-cover {
+  padding-top: 85px;
+}
+
+
 
