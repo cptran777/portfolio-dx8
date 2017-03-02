@@ -1,6 +1,7 @@
 /* Contains the styling for the overall application container and application-wide
  * elements
  */
+@import 'variables';
 
 html, body, .ember-application > .ember-view, #app-container, #app-inner-container {
   height: 100%;
@@ -15,13 +16,10 @@ html {
       margin: 0 0 0 0;
 
       #app-body {
+        @include smooth-transitions(0.5s);
         height: 100%;
         background: #ccbbee;
         overflow: auto;
-        -webkit-transition: all 0.5s ease;
-           -moz-transition: all 0.5s ease;
-             -o-transition: all 0.5s ease;
-                transition: all 0.5s ease;
       }
 
       .menu-collapsed {

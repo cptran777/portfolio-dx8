@@ -1,8 +1,11 @@
+@import '../../variables';
+
 #index-container {
   height: 100%;
   padding-top: 85px;
 
   #index-page-header {
+    @include smooth-transitions(0.5s);
     position: absolute;
     background-color: yellow;
     top: 0;
