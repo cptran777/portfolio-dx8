@@ -1,9 +1,10 @@
+@import '../variables';
+
 #footer-container {
   height: 100%;
-  background: #ff88aa;
   -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
        -o-transition: all 0.5s ease;
           transition: all 0.5s ease;
-
+  background-color: $primary-bright-color;
 }

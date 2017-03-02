@@ -3,6 +3,13 @@ import { capitalize } from 'charlie-tran/utils/formatting';
 
 export default Ember.Component.extend({
   /**
+   * Ember injected service to share collapsed state with other
+   * comopnents
+   * @type {Object}
+   */
+  navbarState: Ember.inject.service(),
+
+  /**
    * Injected Ember service to keep track of current route for navigation
    * @type {Object}
    */
@@ -65,11 +72,13 @@ export default Ember.Component.extend({
   actions: {
     onCollapse() {
       this.set('isCollapsed', true);
+      this.get('navbarState').collapse();
       this.get('toggleSidebar')(true);
     },
 
     onExpand() {
       this.set('isCollapsed', false);
+      this.get('navbarState').expand();
       this.get('toggleSidebar')(false);
     },
 
