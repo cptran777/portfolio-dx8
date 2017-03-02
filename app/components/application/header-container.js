@@ -35,11 +35,16 @@ export default Ember.Component.extend({
     });
   }),
 
-  selectedRoute: Ember.computed('currentRoute.activeRoute', function() {
-    const activeRoute = this.get('currentRoute.activeRoute');
-
-    return capitalize(activeRoute);
-  }),
+  /**
+   * Directory to route map that ties application names to
+   * router records
+   * @type {Object}
+   */
+  directoryMap: {
+    home: 'index',
+    portfolio: 'portfolio',
+    interests: 'interests'
+  },
 
   /**
    * List of links to be rendered as well as tracking of the active link
@@ -47,21 +52,17 @@ export default Ember.Component.extend({
    */
   linkedList: Ember.computed('currentRoute.activeRoute', function() {
     const activeRoute = this.get('currentRoute.activeRoute');
-    const directoryList = ['home', 'portfolio', 'interests'];
+    const directoryMap = this.get('directoryMap');
+    const directoryList = Object.keys(directoryMap);
 
     return directoryList.map(directory => ({
-      val: directory,
+      val: directoryMap[directory],
       message: capitalize(directory),
       selected: activeRoute === directory
     }));
   }),
 
   actions: {
-    testAction() {
-      this.toggleProperty('isCollapsed');
-      this.get('toggleSidebar')(this.get('isCollapsed'));
-    },
-
     onCollapse() {
       this.set('isCollapsed', true);
       this.get('toggleSidebar')(true);
@@ -70,6 +71,10 @@ export default Ember.Component.extend({
     onExpand() {
       this.set('isCollapsed', false);
       this.get('toggleSidebar')(false);
+    },
+
+    onNewRoute(routeName) {
+      this.get('goToRoute')(routeName);
     }
   }
 });

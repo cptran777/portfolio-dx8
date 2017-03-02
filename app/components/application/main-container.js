@@ -34,6 +34,11 @@ export default Ember.Component.extend({
   footerClass: 'col-xs-12 col-sm-2 col-md-2',
 
   actions: {
+    /**
+     * Handles toggle of the sidebar from the parent container level
+     * @param  {Boolean} isCollapsed
+     * @return {undefined}
+     */
     toggleSidebar(isCollapsed) {
       const {
         collapsedClasses,
@@ -43,6 +48,15 @@ export default Ember.Component.extend({
       this.set(
         'bodyClasses',
         isCollapsed ? collapsedClasses : expandedClasses);
+    },
+
+    /**
+     * Passes route transition action from header to application route object
+     * @param  {String} routeName
+     * @return {undefined}
+     */
+    goToRoute(routeName) {
+      this.get('goToRoute')(routeName);
     }
   }
 });

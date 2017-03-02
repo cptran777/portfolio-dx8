@@ -22,12 +22,20 @@
       <i class="fa fa-github-square fa-5x" aria-hidden="true"></i>
     </a>
   </div>
-  <div id="profil-nav" class="col-xs-12 col-sm-12 col-md-12">
-    selected route: {{selectedRoute}}
+  <div id="profile-nav" class="col-xs-12 col-sm-12 col-md-12">
+    <nav id="app-navigation" class="row">
+      {{#each linkedList as |link|}}
+        <div class="col-xs-12 col-sm-12 col-md-12 nav-link {{if link.selected "selected"}}"
+        {{action "onNewRoute" link.val}}>
+          {{link.message}}
+        </div>
+      {{/each}}
+    </nav>
   </div>
 {{else}}
   <i class="fa fa-angle-double-right fa-2x pull-right toggle-menu"
   aria-hidden="true" {{action "onExpand"}}></i>
+  <img id="profile-sidebar-logo" class="profile-icon-img" {{action "onNewRoute" "index"}} src="assets/images/Personal-Icon.png" />
   <a href="https://www.linkedin.com/in/charlie-tran" class="profile-icon">
     <i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i>
   </a>
