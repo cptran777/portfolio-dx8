@@ -7,6 +7,12 @@ export default Ember.Component.extend({
    */
   chatterBox: Ember.inject.service(),
 
+  didInsertElement() {
+    for (let x = 0; x < 12; x++) {
+      this.get('chatterBox').generateMessage('testing');
+    }
+  },
+
   /**
    * Creates a list of messages from the chatterbox service
    * @return {Array}
@@ -24,10 +30,5 @@ export default Ember.Component.extend({
       this.get('chatterBox').generateMessage('another test');
     },
 
-    didInsertElement() {
-      for (let x = 0; x < 12; x++) {
-        this.get('chatterBox').generateMessage('testing');
-      }
-    }
   }
 });

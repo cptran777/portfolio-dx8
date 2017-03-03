@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import randomUsername from 'charlie-tran/utils/random-username';
+import randomMessage from 'charlie-tran/utils/random-message';
 
 /*
  * The chatter box service can be passed to various components to do a sort of
@@ -34,6 +35,8 @@ export default Ember.Service.extend({
     const rng = (Math.random() * (currentUserLength * 1.1)) + 1;
     const color = `chat-color-${Math.ceil(Math.random() * 9)}`;
     let user;
+
+    newMessage = newMessage || randomMessage();
 
     // If username, find if username already exists in user list:
     if (username) {
