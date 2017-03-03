@@ -1,6 +1,25 @@
-Footer Stuff
-<button {{action "testAction"}}>Test 1</button>
-<button {{action "testActionTwo"}}>Test 2</button>
-{{#each messages as |message|}}
-  <p>{{message.user}}: {{message.message}}</p>
-{{/each}}
+<div id="footer-title-container" class="row">
+  Footer Title
+  <button {{action "testAction"}}>Test1</button>
+  <button {{action "testActionTwo"}}>Test2</button>
+</div>
+<div id="footer-chat-container" class="row">
+  {{#each messages as |message|}}
+    <p class="chat-color-1"><strong class={{message.color}}>{{message.user}}:</strong> {{message.message}}</p>
+  {{/each}}
+  <p class="chat-color-1"><strong class="chat-color-1">Color 1:</strong> Hello there!</p>
+  <p class="chat-color-1"><strong class="chat-color-2">Color 2:</strong> Hello there!</p>
+  <p class="chat-color-1"><strong class="chat-color-3">Color 3:</strong> Hello there!</p>
+  <p class="chat-color-1"><strong class="chat-color-4">Color 4:</strong> Hello there!</p>
+  <p class="chat-color-1"><strong class="chat-color-5">Color 5:</strong> Hello there!</p>
+  <p class="chat-color-1"><strong class="chat-color-6">Color 6:</strong> Hello there!</p>
+  <p class="chat-color-1"><strong class="chat-color-7">Color 7:</strong> Hello there!</p>
+  <p class="chat-color-1"><strong class="chat-color-8">Color 8:</strong> Hello there!</p>
+  <p class="chat-color-1"><strong class="chat-color-9">Color 9:</strong> Hello there!</p>
+</div>
+<div id="footer-input-container" class="row">
+  Input Stuff
+</div>
+<div id="footer-bottom-container" class="row">
+  Footer Stuff
+</div>

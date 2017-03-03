@@ -12,28 +12,45 @@ export default Ember.Service.extend({
    * and a message attached
    * @type {Array}
    */
-  messageList: [],
+  messageList: [{
+    user: 'Pro Genji',
+    message: 'Hello! Welcome to Charlie\'s personal site!',
+    color: 'chat-color-6'
+  }],
 
   /**
    * List of saved userNames that can be used instead of generating a new one
    * @type {Array}
    */
-  usernameList: [],
+  usernameList: [{
+    user: 'Pro Genji',
+    color: 'chat-color-6'
+  }],
 
   generateMessage(newMessage, username) {
     const messageList = this.get('messageList');
     const usernameList = this.get('usernameList');
     const currentUserLength = usernameList.length;
     const rng = (Math.random() * (currentUserLength * 1.1)) + 1;
+    const color = `chat-color-${Math.ceil(Math.random() * 9)}`;
+    let user;
 
-    if (rng > currentUserLength && !username) {
-      username = randomUsername();
+    // If username, find if username already exists in user list:
+    if (username) {
+      user = usernameList.find(person => person.user === username);
+      if (!user) {
+        user = { color, user: username };
+        this.set('usernameList', usernameList.concat(user));
+      }
     } else {
-      username = username || usernameList[Math.floor(Math.random() * currentUserLength)];
+      user = rng > currentUserLength ?
+        { color, user: randomUsername() } :
+        usernameList[Math.floor(Math.random() * currentUserLength)];
     }
 
     this.set('messageList', messageList.concat({
-      user: username,
+      user: user.user,
+      color: user.color,
       message: newMessage
     }));
   }

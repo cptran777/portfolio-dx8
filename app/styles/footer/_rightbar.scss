@@ -1,7 +1,78 @@
 @import '../variables';
 
+$chat-color-1: #f2f6fc;
+$chat-color-2: #ff2c33;
+$chat-color-3: #0e95a0;
+$chat-color-4: #e55800;
+$chat-color-5: #827be9;
+$chat-color-6: #469a1f;
+$chat-color-7: #ff1b90;
+$chat-color-8: #fcef3a;
+$chat-color-9: #0091ca;
+
 #footer-container {
   @include smooth-transitions(0.5s);
   height: 100%;
   background-color: $primary-bright-color;
+  padding-top: 2%;
+
+  #footer-title-container {
+    text-align: center;
+    height: 5%;
+  }
+
+  #footer-chat-container {
+    @include slight-padding(10px);
+    height: 73%;
+    background: $primary-color;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .chat-color-1 {
+      color: $chat-color-1;
+    }
+
+    .chat-color-2 {
+      color: $chat-color-2;
+    }
+
+    .chat-color-3 {
+      color: $chat-color-3;
+    }
+
+    .chat-color-4 {
+      color: $chat-color-4;
+    }
+
+    .chat-color-5 {
+      color: $chat-color-5;
+    }
+
+    .chat-color-6 {
+      color: $chat-color-6;
+    }
+
+    .chat-color-7 {
+      color: $chat-color-7;
+    }
+
+    .chat-color-8 {
+      color: $chat-color-8;
+    }
+
+    .chat-color-9 {
+      color: $chat-color-9;
+    }
+  }
+
+  #footer-input-container {
+    text-align: center;
+    height: 15%;
+  }
+
+  #footer-bottom-container {
+    @include slight-padding(10px);
+    text-align: center;
+    height: 5%;
+  }
 }

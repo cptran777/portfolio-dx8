@@ -22,6 +22,12 @@ export default Ember.Component.extend({
 
     testActionTwo() {
       this.get('chatterBox').generateMessage('another test');
+    },
+
+    didInsertElement() {
+      for (let x = 0; x < 12; x++) {
+        this.get('chatterBox').generateMessage('testing');
+      }
     }
   }
 });

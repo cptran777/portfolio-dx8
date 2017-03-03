@@ -11,3 +11,8 @@ $primary-grey-color: #cccdce;
        -o-transition: all $time ease;
           transition: all $time ease;
 }
+
+@mixin slight-padding($amount) {
+  padding-left: $amount;
+  padding-top: $amount;
+}
