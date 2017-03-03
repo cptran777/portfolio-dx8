@@ -10,28 +10,52 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: red;
     width: 100%;
     border-bottom: 1px solid $primary-grey-color;
 
     .banner {
+      @include smooth-transitions(0.5s);
       padding-left: 15px;
       padding-right: 15px;
       padding-top: 1%;
-      background-color: yellow;
-      height: 100%;
+      height: 75px;
 
       .banner-img-container {
         height: 75%;
         text-align: center;
         padding-bottom: 5px;
         border-bottom: 5px solid $primary-color;
+        cursor: pointer;
       }
 
-      .banner-img-container {
-        cursor: pointer;
+      .banner-title-container {
+        margin-top: 10px;
+        padding-top: 15px;
+        padding-top: 10px;
+        text-decoration: underline;
+        font-weight: bold;
+        border-right: 1px solid $primary-grey-color;
+        text-align: center;
+        cursor: default;
+      }
+
+      .banner-img {
         height: 50px;
       }
+    }
+
+    .cover-banner {
+      @include smooth-transitions(0.5s);
+      background-image: url("/assets/images/Cover-Image.jpg");
+      background-size: 100% 100%;
+    }
+
+    .cover-banner.hide-cover {
+      height: 0px;
+    }
+
+    .cover-banner.show-cover {
+      height: 175px;
     }
 
     #navbar-img {

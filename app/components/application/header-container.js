@@ -3,6 +3,12 @@ import { capitalize } from 'charlie-tran/utils/formatting';
 
 export default Ember.Component.extend({
   /**
+   * Ember injected service to generate messages in chatbox
+   * @type {Object}
+   */
+  chatterBox: Ember.inject.service(),
+
+  /**
    * Ember injected service to share collapsed state with other
    * comopnents
    * @type {Object}

@@ -1,15 +1,19 @@
-{{#if showCover}}
-  <div class="row cover-banner">
-  </div>
-{{/if}}
+<div class="row cover-banner {{if showCover "show-cover" "hide-cover"}}">
+</div>
 <div class="row banner">
   <div class="col-xs-12 col-sm-3 col-md-1 banner-img-container"
   {{action (if showCover "onHideCover" "onShowCover")}}>
     <img id="navbar-img" src="assets/images/Navbar-Image.jpg" />
   </div>
-  More stuff
-  More stuff
-  More stuff here look at me
+  <div class="col-xs-12 col-sm-3 col-md-3 banner-title-container">
+    About Me
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-3 banner-title-container">
+    Testing
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-3 banner-title-container">
+    Testing
+  </div>
 </div>
 
 {{yield}}

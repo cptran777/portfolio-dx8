@@ -1,2 +1,6 @@
 Footer Stuff
-{{yield}}
+<button {{action "testAction"}}>Test 1</button>
+<button {{action "testActionTwo"}}>Test 2</button>
+{{#each messages as |message|}}
+  <p>{{message.user}}: {{message.message}}</p>
+{{/each}}

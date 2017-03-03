@@ -41,7 +41,7 @@ export default Ember.Component.extend({
       isCollapsed,
       isCoverExpanded
     } = this.getProperties('isCollapsed', 'isCoverExpanded');
-    const classList = [];
+    const classList = ['col-xs-12 col-sm-12 col-md-12'];
 
     classList.push(isCollapsed ? 'header-collapsed' : 'header-expanded');
     classList.push(isCoverExpanded ? 'show-cover' : 'hide-cover');
