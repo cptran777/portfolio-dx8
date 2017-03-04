@@ -26,6 +26,9 @@ export default Ember.Service.extend({
   usernameList: [{
     user: 'Pro Genji',
     color: 'chat-color-6'
+  }, {
+    user: 'Pro Hanzo Main',
+    color: 'chat-color-4'
   }],
 
   generateMessage(newMessage, username) {

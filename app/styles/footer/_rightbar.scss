@@ -66,8 +66,23 @@ $chat-color-9: #0091ca;
   }
 
   #footer-input-container {
+    padding-top: 3%;
     text-align: center;
     height: 15%;
+
+    .footer-input {
+      height: 100%;
+      width: 100%;
+      vertical-align: top;
+    }
+
+    #footer-username-input {
+      height: 20%;
+    }
+
+    #footer-chat-input {
+      height: 60%;
+    }
   }
 
   #footer-bottom-container {

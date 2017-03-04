@@ -8,9 +8,20 @@ export default Ember.Component.extend({
   chatterBox: Ember.inject.service(),
 
   didInsertElement() {
-    for (let x = 0; x < 12; x++) {
-      this.get('chatterBox').generateMessage('testing');
+    const generateMessage = () => {
+      const randomNumber = Math.floor(Math.random() * 12000) + 7000;
+
+      this.get('chatterBox').generateMessage();
+      setTimeout(() => {
+        generateMessage();
+      }, randomNumber);
     }
+
+    this.get('chatterBox').generateMessage('WELCOME FELLOW HUMAN', 'I_M NOT BOT');
+
+    setTimeout(() => {
+      generateMessage();
+    }, 7000);
   },
 
   /**
@@ -21,14 +32,35 @@ export default Ember.Component.extend({
     return this.get('chatterBox.messageList');
   }),
 
+  /**
+   * Guest username input
+   * @type {String}
+   */
+  guestUsernameInput: null,
+
+  /**
+   * Guest chat input
+   * @type {String}
+   */
+  guestChatInput: null,
+
+  /**
+   * Guest username calculated from their response
+   * @return {String}
+   */
+  guestUsername: Ember.computed('guestUsernameInput', function() {
+    const username = this.get('guestUsernameInput');
+
+    return (!username || username.length === 0) ? 'Anonymous' :
+      username.length > 20 ? username.slice(0, 20) : username;
+  }),
+
   actions: {
-    testAction() {
-      this.get('chatterBox').generateMessage('testing', 'John Stamos');
-    },
-
-    testActionTwo() {
-      this.get('chatterBox').generateMessage('another test');
-    },
-
+    onSendMessage() {
+      const username = this.get('guestUsername');
+      const message = this.get('guestChatInput');
+      this.get('chatterBox').generateMessage(message, username);
+      this.set('guestChatInput', null);
+    }
   }
 });

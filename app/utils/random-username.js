@@ -7,7 +7,8 @@ const usernames = [
   'lone', 'ranger', 'gunner', 'chief', 'bandit', 'lloyd', 'sarah', 'matt',
   'brenton', 'kevin', 'justin', 'lord', 'overlord', 'phantom', 'ghost', 'malig',
   'dragon', 'flaming', 'wings', 'hope', 'horizon', 'zero', 'one', 'two', 'seven',
-  'six', 'eternal', 'ethereal', 'ephemeral', 'angel', 'SF', 'yorker'
+  'six', 'eternal', 'ethereal', 'ephemeral', 'angel', 'SF', 'yorker', 'matty',
+  'teax', 'wolverine', 'tears', 'angelic', 'rune', 'brooklyn', 'rage', 'joey'
 ];
 
 /**

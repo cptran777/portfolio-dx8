@@ -1,5 +1,5 @@
 <div id="footer-title-container" class="row">
-  Footer Title
+  Chat for Totally Humans
 </div>
 <div id="footer-chat-container" class="row">
   {{#each messages as |message|}}
@@ -7,7 +7,24 @@
   {{/each}}
 </div>
 <div id="footer-input-container" class="row">
-  Input Stuff
+  <div id="footer-username-input" class="col-xs-12 col-sm-12 col-md-12">
+    {{input
+      value=guestUsernameInput
+      class="footer-input"
+      placeholder="Your Username"
+    }}
+  </div>
+  <div id="footer-chat-input" class="col-xs-12 col-sm-12 col-md-12">
+  {{textarea
+    value=guestChatInput
+    class="footer-input"
+    placeholder="Send a Message"
+    enter="onSendMessage"
+  }}
+  </div>
+  <div id="footer-send-message" class="col-xs-12 col-sm-12 col-md-12">
+    <button class="pull-right" {{action "onSendMessage"}}>Send</button>
+  </div>
 </div>
 <div id="footer-bottom-container" class="row">
   Footer Stuff
