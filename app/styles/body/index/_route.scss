@@ -78,6 +78,11 @@
   .hide-cover {
     height: 75px;
   }
+
+  #game-window {
+    height: 50%;
+    background-color: $secondary-bright-color;
+  }
 }
 
 #index-container.show-cover {
