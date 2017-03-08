@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+let baseNumber = 0;
+
 export default Ember.Component.extend({
   /**
    * Ember injected service to show chat box
@@ -9,7 +11,8 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     const generateMessage = () => {
-      const randomNumber = Math.floor(Math.random() * 12000) + 7000;
+      const randomNumber = Math.floor(Math.random() * 12000) + 7000 + baseNumber;
+      baseNumber += 100;
 
       this.get('chatterBox').generateMessage();
       setTimeout(() => {

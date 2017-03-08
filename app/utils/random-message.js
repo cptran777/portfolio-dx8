@@ -67,7 +67,8 @@ const messages = [
   'gg guys',
   'WHAT ARE YOU DOIN IN MAH SWAMP?',
   'Today is the last day of my vegan challenge',
-  'CA$H ME OUTSAH HOW BOU DAH?'
+  'CA$H ME OUTSAH HOW BOU DAH?',
+  'Just picked up wow. goodbye real life'
 ];
 
 /**
