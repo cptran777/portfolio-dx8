@@ -65,7 +65,9 @@ const messages = [
   'why is roadhog still so OP?',
   'bahahahahahahahahaha get rekt',
   'gg guys',
-  'WHAT ARE YOU DOIN IN MAH SWAMP?'
+  'WHAT ARE YOU DOIN IN MAH SWAMP?',
+  'Today is the last day of my vegan challenge',
+  'CA$H ME OUTSAH HOW BOU DAH?'
 ];
 
 /**
