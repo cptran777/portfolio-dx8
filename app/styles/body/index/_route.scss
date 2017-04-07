@@ -83,6 +83,27 @@
     height: 50%;
     background-color: $secondary-bright-color;
   }
+
+  .detail-card {
+    margin-top: 1%;
+    border: 1px solid $primary-bright-color;
+
+    .detail-content {
+      color: $secondary-color;
+    }
+
+    .game-image-container {
+      padding: 5px;
+      .game-image {
+        max-width: 90%;
+      }
+    }
+
+    .game-info-container {
+      padding: 10px 5px;
+
+    }
+  }
 }
 
 #index-container.show-cover {

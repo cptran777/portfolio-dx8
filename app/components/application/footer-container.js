@@ -18,7 +18,7 @@ export default Ember.Component.extend({
       setTimeout(() => {
         generateMessage();
       }, randomNumber);
-    }
+    };
 
     this.get('chatterBox').generateMessage('WELCOME FELLOW HUMAN', 'I_M NOT BOT');
 

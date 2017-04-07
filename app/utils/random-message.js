@@ -68,7 +68,11 @@ const messages = [
   'WHAT ARE YOU DOIN IN MAH SWAMP?',
   'Today is the last day of my vegan challenge',
   'CA$H ME OUTSAH HOW BOU DAH?',
-  'Just picked up wow. goodbye real life'
+  'Just picked up wow. goodbye real life',
+  'I am awake',
+  'its a sequel',
+  'always be yourself. except when you can be batman. always be batman',
+  'Its the nail that sticks out that gets hammered down'
 ];
 
 /**
