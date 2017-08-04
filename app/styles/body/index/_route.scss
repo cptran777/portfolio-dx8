@@ -101,6 +101,8 @@
   .detail-card {
     margin-top: 1%;
     border: 1px solid $primary-bright-color;
+    padding-top: 8px;
+    padding-bottom: 8px;
 
     .detail-content {
       color: $secondary-color;
@@ -115,6 +117,27 @@
 
     .game-info-container {
       padding: 10px 5px;
+    }
+
+    &__mini-card-container {
+      height: 85px;
+      padding: 0px 16px;
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 8px;
+
+      img {
+        width: 50%;
+      }  
+
+      .mini-card {
+        // background-color: $primary-color;
+        padding-top: 6px;
+
+        &:hover {
+          // background-color: $primary-bright-color;
+        }
+      }
 
     }
   }

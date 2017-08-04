@@ -1,0 +1,8 @@
+{{#each rowsOfImages as |imageRow|}}
+  {{#each imageRow as |imagePath|}}
+    {{#index/reusable/mini-card
+      class="detail-card__mini-card-container"}}
+      <img src={{imagePath}} />
+    {{/index/reusable/mini-card}}
+  {{/each}}
+{{/each}}

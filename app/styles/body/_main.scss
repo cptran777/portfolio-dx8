@@ -5,3 +5,13 @@
   margin-bottom: 5px;
   border-bottom: 1px solid black;
 }
+
+.mini-card {
+  border: 1px solid $primary-color;
+  height: 85px;
+
+  &:hover {
+    border: 2px solid $secondary-color;
+    box-shadow: 5px 5px 2px $primary-grey-color;
+  }
+}
