@@ -5,7 +5,7 @@ const pronouns = ['I', 'he', 'she', 'it', 'they', 'we'];
 const nouns = [
   'cat', 'dog', 'car'
 ];
-
+// TODO: Should eventually move to store these types of files online
 const messages = [
   'I voted for myself...',
   'TOTALLY NOT ROBOT',

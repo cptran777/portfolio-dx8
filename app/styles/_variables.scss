@@ -1,8 +1,14 @@
+// Dark black/blue
 $primary-color: #151a28;
+// Light blue
 $secondary-color: #81d2ff;
+// Lighter kinda green-blue
 $secondary-color-hover: #a8f2ff;
+// Faded light grey/blue
 $primary-bright-color: #c2cdea;
+// Faded light blue
 $secondary-bright-color: #c2e7fc;
+// Quite grey
 $primary-grey-color: #cccdce;
 
 @mixin smooth-transitions($time) {
