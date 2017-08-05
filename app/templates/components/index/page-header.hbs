@@ -5,15 +5,11 @@
   {{action (if showCover "onHideCover" "onShowCover")}}>
     <img id="navbar-img" src="assets/images/Navbar-Image.jpg" />
   </div>
-  <div class="col-xs-12 col-sm-3 col-md-3 banner-title-container">
-    <span>About Me</span>
-  </div>
-  <div class="col-xs-12 col-sm-3 col-md-3 banner-title-container">
-    <span>Testing</span>
-  </div>
-  <div class="col-xs-12 col-sm-3 col-md-3 banner-title-container">
-    <span>Testing</span>
-  </div>
+  {{#each renderedTabs as |tab|}}
+    <div class="col-xs-12 col-sm-3 col-md-3 banner-title-container {{if tab.selected "banner-title-container--selected"}}">
+      <span {{action onNewTab tab.val}}>{{tab.name}}</span>
+    </div>
+  {{/each}}
 </div>
 
 {{yield}}

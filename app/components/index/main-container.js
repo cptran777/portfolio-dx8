@@ -49,6 +49,13 @@ export default Ember.Component.extend({
     return classList.join(' ');
   }),
 
+  /**
+   * Keeps track of the current tab of the index route. Options are 'index',
+   * 'interests', and 'misc' (for now)
+   * @type {String}
+   */
+  currentTab: 'index',
+
   actions: {
     /**
      * Changes cover expanded state to modify the page header class accordingly
@@ -57,6 +64,16 @@ export default Ember.Component.extend({
      */
     onChangeCover(isExpanded) {
       this.set('isCoverExpanded', isExpanded);
+    },
+
+    /**
+     * Changes the current tab to its new value. Activated from the page-header component
+     * when a user clicks on a tab
+     * @param {String} tabName - name of the new tab to switch to
+     * @return {undefined} 
+     */
+    onNewTab(tabName) {
+      this.set('currentTab', tabName);
     }
   }
 });

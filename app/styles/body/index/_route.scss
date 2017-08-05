@@ -17,11 +17,11 @@
       @include smooth-transitions(0.5s);
       padding-left: 15px;
       padding-right: 15px;
-      padding-top: 1%;
+      padding-top: 8px;
       height: 75px;
 
       .banner-img-container {
-        height: 75%;
+        height: 60px;
         text-align: center;
         padding-bottom: 5px;
         border-bottom: 5px solid $primary-color;
@@ -34,11 +34,15 @@
 
       .banner-title-container {
         margin-top: 10px;
-        padding-top: 15px;
         padding-top: 10px;
         font-weight: bold;
         border-right: 1px solid $primary-grey-color;
         text-align: center;
+        height: 57px;
+
+        &--selected {
+          border-bottom: 5px solid $secondary-color;
+        }
 
         span {
           cursor: pointer;

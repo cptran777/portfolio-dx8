@@ -1,6 +1,8 @@
 {{index/page-header
   id="index-page-header"
   class=pageHeaderClass
+  currentTab=currentTab
+  onNewTab=(action "onNewTab")
   onChangeCover=(action "onChangeCover")
 }}
 <div id="game-window" class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
@@ -14,7 +16,7 @@
     </div>
     <div class="col-xs-9 col-sm-9 col-md-10 game-info-container">
       <div class="row">
-        Portfolio Site
+        Telling the world about myself
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3">
@@ -25,21 +27,23 @@
     </div>
   </div>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 detail-card">
-  <div class="row detail-card__banner">
-    <h3>Summary About Me</h3>
+{{#if (eq currentTab "index")}}
+  <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 detail-card">
+    <div class="row detail-card__banner">
+      <h3>Summary About Me</h3>
+    </div>
+      {{index/partials/summary-content}}
   </div>
-    {{index/partials/summary-content}}
-</div>
-<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 detail-card">
-  <div class="row detail-card__banner">
-    <h3>Skills</h3>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 detail-card">
+    <div class="row detail-card__banner">
+      <h3>Skills</h3>
+    </div>
+    {{index/partials/skills-content class="row"}}
   </div>
-  {{index/partials/skills-content class="row"}}
-</div>
-<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 detail-card">
-  <div class="row detail-card__banner">
-    <h3>Currently Working On</h3>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 detail-card">
+    <div class="row detail-card__banner">
+      <h3>Currently Working On</h3>
+    </div>
+    {{index/partials/skills-content class="row" content="currentWorking"}}
   </div>
-  {{index/partials/skills-content class="row" content="currentWorking"}}
-</div>
+{{/if}}
