@@ -15,3 +15,26 @@
     box-shadow: 5px 5px 2px $primary-grey-color;
   }
 }
+
+.route-container {
+  .detail-card {
+    margin-top: 1%;
+    border: 1px solid $primary-bright-color;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+
+    .detail-content {
+      color: $secondary-color;
+    }
+
+    &__banner {
+      background-color: $primary-color;
+      padding: 8px 25px;
+      margin-bottom: 8px;
+
+      h3 {
+        color: $primary-bright-color;
+      }
+    }
+  }
+}

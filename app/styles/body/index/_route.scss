@@ -107,15 +107,6 @@
   }
 
   .detail-card {
-    margin-top: 1%;
-    border: 1px solid $primary-bright-color;
-    padding-bottom: 8px;
-    margin-bottom: 16px;
-
-    .detail-content {
-      color: $secondary-color;
-    }
-
     .game-image-container {
       padding: 5px;
       .game-image {
@@ -125,16 +116,6 @@
 
     .game-info-container {
       padding: 10px 5px;
-    }
-
-    &__banner {
-      background-color: $primary-color;
-      padding: 8px 25px;
-      margin-bottom: 8px;
-
-      h3 {
-        color: $primary-bright-color;
-      }
     }
 
     &__mini-card-container {
