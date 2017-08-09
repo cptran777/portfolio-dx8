@@ -40,9 +40,18 @@ export default Ember.Component.extend({
    */
   isExpanded: false,
 
+  /**
+   * Flags for controlling the animation of the image. Everything happens in steps after the
+   * card actually expands or unexpands. 
+   * @type {Boolean}
+   */
   showImage: true,
   expandImage: true,
 
+  /**
+   * Listens to a change in the expanded state and times the animation of the image of the card
+   * to follow
+   */
   setImage: Ember.observer('isExpanded', function() {
     this.setProperties({
       showImage: false,
