@@ -1,11 +1,37 @@
 <div class="col-md-12 card-set-title">
-
+  <h2>Tech Interests</h2>
 </div>
-
-{{interests/reusable/info-card}}
-{{interests/reusable/info-card}}
-{{interests/reusable/info-card}}
-{{interests/reusable/info-card}}
-{{interests/reusable/info-card}}
-
+<div class="col-md-12 card-set-container">
+  <div class="row">
+    {{interests/reusable/info-card
+      infoId="virtualreality"
+      infoHeader="Virtual and Augmented Reality"
+      isHidden=hiddenState.virtualreality
+      expandedResolver=(action "expandedResolver")}}
+    {{interests/reusable/info-card
+      infoId="machinelearning"
+      isHidden=hiddenState.machinelearning
+      expandedResolver=(action "expandedResolver")}}
+  </div>
+  <div class="row">
+    {{interests/reusable/info-card
+      infoId="gamedev"
+      isHidden=hiddenState.gamedev
+      expandedResolver=(action "expandedResolver")}}
+    {{interests/reusable/info-card
+      infoId="python"
+      isHidden=hiddenState.python
+      expandedResolver=(action "expandedResolver")}}
+  </div>
+  <div class="row">
+    {{interests/reusable/info-card
+      infoId="music"
+      isHidden=hiddenState.music
+      expandedResolver=(action "expandedResolver")}}
+    {{interests/reusable/info-card
+      infoId="television"
+      isHidden=hiddenState.television
+      expandedResolver=(action "expandedResolver")}}
+  </div>
+</div>
 {{yield}}

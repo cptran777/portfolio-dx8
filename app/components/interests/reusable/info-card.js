@@ -12,5 +12,46 @@ export default Ember.Component.extend({
    * Class name bindings for the rendered component
    * @type {Array}
    */
-  classNames: ['col-sm-12', 'col-md-6', 'info-card']
+  classNames: ['col-sm-12', 'col-md-6', 'info-card'],
+
+  /**
+   * Class name bindings for the rendered component that are connected to the component
+   * properties
+   * @type {Array}
+   */
+  classNameBindings: ['isExpanded:info-card--expanded:info-card--unexpanded', 'isHidden:hidden'],
+
+  cardClassBinding: Ember.computed('isExpanded', function() {
+    const baseClass = 'info-card__card';
+    const result = [baseClass];
+
+    if (this.get('isExpanded')) {
+      result.push(`${baseClass}--expanded`);
+    } else {
+      result.push(`${baseClass}--unexpanded`);
+    }
+
+    return result.join(' ');
+  }),
+
+  /**
+   * Flag for the expanded state of the card. Will be toggled by a user action on the view
+   * @type {Boolean}
+   */
+  isExpanded: false,
+  
+  actions: {
+    /**
+     * When toggling the expanded state of the card, a resolver function may have been passed
+     * in, in which case the resolver will be called accordingly
+     * @return {undefined} - the return value for the resolver is expected to be undefined as it
+     *                       only should have side effects as a function
+     */
+    onToggleExpanded() {
+      const resolver = this.attrs.expandedResolver;
+
+      this.toggleProperty('isExpanded');
+      return resolver && resolver(this.get('isExpanded'), this.get('infoId'));
+    }
+  }
 });

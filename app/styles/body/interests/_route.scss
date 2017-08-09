@@ -2,17 +2,109 @@
 // This file contains the styles related specifically to the interests route
 
 #interests-container {
-  padding-top: 75px;
+  padding-top: 15px;
+
+  .card-set-title {
+    // TODO: Do something with h2
+  }
 
   .info-card {
+    @include smooth-transitions(1s, all);
     // border: 1px solid black;
     height: 300px;
     padding: 12px 24px;
 
+    &--expanded {
+      width: 100%;
+      height: 375px;
+    }
+
     &__card {
+      @include smooth-transitions(1s, all);
       height: 100%;
       width: 100%;
       border: 1px solid black;
+      position: relative;
+      background-color: $primary-color;
+
+      &--unexpanded {
+        &:hover {
+          box-shadow: 5px 5px 2px $primary-grey-color;
+        }
+
+        .info-card__card {
+          &__picture {
+            width: 100%;
+            height: 130px;
+          }
+
+          &__details {
+            width: 100%;
+            height: 90px;
+          }
+        }
+      }
+
+      &--expanded {
+
+        .info-card__card {
+          &__header {
+            border-bottom: 1px solid $secondary-color;
+
+            h3 {
+              float: right;
+            }
+          }
+
+          &__picture {
+            float: left;
+            width: 30%;
+            height: 293px;
+          }
+
+          &__details {
+            float: left;
+            width: 70%;
+            height: 293px;
+            overflow: auto;
+          }
+        }
+      }
+
+      &__header { 
+        width: 100%;
+        height: 56px;
+        padding: 3px 12px;
+
+        h3 {
+          @include smooth-transitions(1s);
+          color: $primary-bright-color;
+          float: left;
+          margin-bottom: 0;
+        }
+      }
+
+      &__picture {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &__details {
+        color: $secondary-color;
+      }
+
+      &__toggle {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        cursor: pointer;
+
+        &:hover {
+          color: $secondary-bright-color;
+        }
+      }
     }
   }
 }

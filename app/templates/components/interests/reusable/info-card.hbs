@@ -1,4 +1,13 @@
-<div class="info-card__card">
-  Hello darkness my old friend
+<div class={{cardClassBinding}}>
+  <div class="info-card__card__header">
+    <h3>{{infoHeader}}</h3>
+  </div>
+  <div class="info-card__card__picture">
+    <img src="assets/images/Cover-Image.jpg" />
+  </div>
+  <div class="info-card__card__details">
+    <i class="fa {{if isExpanded "fa-minus-circle" "fa-plus-circle"}} info-card__card__toggle" 
+    aria-hidden="true" {{action "onToggleExpanded"}}></i>
+  </div>
 </div>
 {{yield}}

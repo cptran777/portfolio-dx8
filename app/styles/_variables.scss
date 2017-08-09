@@ -11,11 +11,11 @@ $secondary-bright-color: #c2e7fc;
 // Quite grey
 $primary-grey-color: #cccdce;
 
-@mixin smooth-transitions($time) {
-  -webkit-transition: all $time ease;
-     -moz-transition: all $time ease;
-       -o-transition: all $time ease;
-          transition: all $time ease;
+@mixin smooth-transitions($time, $type:all) {
+  -webkit-transition: $type $time ease;
+     -moz-transition: $type $time ease;
+       -o-transition: $type $time ease;
+          transition: $type $time ease;
 }
 
 @mixin slight-padding($amount) {
