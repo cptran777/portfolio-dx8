@@ -39,6 +39,24 @@ export default Ember.Component.extend({
    * @type {Boolean}
    */
   isExpanded: false,
+
+  showImage: true,
+  expandImage: true,
+
+  setImage: Ember.observer('isExpanded', function() {
+    this.setProperties({
+      showImage: false,
+      expandImage: false
+    });
+
+    setTimeout(() => {
+      this.set('showImage', true);
+
+      setTimeout(() => {
+        this.set('expandImage', true);
+      }, 250);
+    }, 1100);
+  }),
   
   actions: {
     /**
