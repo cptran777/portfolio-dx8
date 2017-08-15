@@ -71,8 +71,18 @@
           &__details {
             float: left;
             width: 70%;
-            height: 293px;
-            overflow: auto;
+            
+            &--expanded {
+              height: 293px;
+            }
+
+            &--flow {
+              overflow: auto;
+            }
+
+            &--no-flow {
+              overflow: hidden;
+            }
           }
         }
       }
@@ -83,10 +93,11 @@
         padding: 3px 12px;
 
         h3 {
-          @include smooth-transitions(1s);
+          @include smooth-transitions(1s, float);
           color: $primary-bright-color;
           float: left;
           margin-bottom: 0;
+          font-size: 1.5vw;
         }
       }
 
@@ -107,13 +118,23 @@
       }
 
       &__details {
+        @include smooth-transitions(1s);
         color: $secondary-color;
+        padding: 6px 12px;
+
+        &--shown {
+          height: 0;
+        }
+
+        &--hidden {
+          display: none;
+        }
       }
 
       &__toggle {
         position: absolute;
         bottom: 8px;
-        right: 8px;
+        right: 16px;
         cursor: pointer;
 
         &:hover {

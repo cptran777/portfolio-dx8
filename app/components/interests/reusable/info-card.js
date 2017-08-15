@@ -7,6 +7,14 @@
  */
 import Ember from 'ember';
 
+/* Constants for the animations of expanding the card. Putting these here so that each
+   function call doesn't need to redeclare these variables */
+const SHOW_IMAGE_INTERVAL = 1100;
+const EXPAND_IMAGE_INTERVAL = SHOW_IMAGE_INTERVAL + 250;
+const SHOW_DETAILS_INTERVAL = EXPAND_IMAGE_INTERVAL + 1100;
+const EXPAND_DETAILS_INTERVAL = SHOW_DETAILS_INTERVAL + 50;
+const DETAIL_OVERFLOW_INTERVAL = EXPAND_DETAILS_INTERVAL + 1100; 
+
 export default Ember.Component.extend({
   /**
    * Class name bindings for the rendered component
@@ -49,22 +57,46 @@ export default Ember.Component.extend({
   expandImage: true,
 
   /**
+   * Flags for controlling the animation of the details window. Everything happens in steps after
+   * the card actually expands or collapses
+   * @type {Boolean}
+   */
+  showDetails: true,
+  expandDetails: true,
+  detailOverflow: true,
+
+  /**
    * Listens to a change in the expanded state and times the animation of the image of the card
    * to follow
    */
   setImage: Ember.observer('isExpanded', function() {
     this.setProperties({
       showImage: false,
-      expandImage: false
+      expandImage: false,
+      showDetails: false,
+      expandDetails: false,
+      detailOverflow: false
     });
 
     setTimeout(() => {
       this.set('showImage', true);
+    }, SHOW_IMAGE_INTERVAL);
 
-      setTimeout(() => {
-        this.set('expandImage', true);
-      }, 250);
-    }, 1100);
+    setTimeout(() => {
+      this.set('expandImage', true);
+    }, EXPAND_IMAGE_INTERVAL);
+
+    setTimeout(() => {
+      this.set('showDetails', true);
+    }, SHOW_DETAILS_INTERVAL);
+
+    setTimeout(() => {
+      this.set('expandDetails', true);
+    }, EXPAND_DETAILS_INTERVAL);
+
+    setTimeout(() => {
+      this.set('detailOverflow', true);
+    }, DETAIL_OVERFLOW_INTERVAL);
   }),
   
   actions: {
