@@ -147,7 +147,6 @@
   .music-player {
     &__nav,
     &__title {
-      cursor: pointer;
       float: left;
       text-align: center;
       height: 100%;
@@ -159,13 +158,18 @@
     &__nav {
       width: 10%;
 
-      &:hover {
-        color: white;
+      i {
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+        }
       }
     }
 
     &__title {
       width: 79%;
+      cursor: default;
     }
 
     &__song-list {
