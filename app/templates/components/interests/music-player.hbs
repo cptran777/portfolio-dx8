@@ -1,0 +1,34 @@
+<div class={{cardClassBinding}}>
+  <div class="info-card__card__header">
+    <h3>Music</h3>
+  </div>
+  <div class="info-card__card__picture info-card__card__picture--{{if showImage "shown" "hidden"}} {{if expandImage "info-card__card__picture--expanded"}}">
+    <iframe src={{concat "https://www.youtube.com/embed/" currentSong.id}}></iframe>
+  </div>
+  <div class="info-card__card__details info-card__card__details--{{if showDetails "shown" "hidden"}} {{if expandDetails "info-card__card__details--expanded"}} info-card__card__details--{{if detailOverflow "flow" "no-flow"}}">
+    <i class="fa {{if isExpanded "fa-minus-circle" "fa-plus-circle"}} info-card__card__toggle" 
+    aria-hidden="true" {{action "onToggleExpanded"}}></i>
+    {{#unless isExpanded}}
+      <div class="music-player__nav music-player__nav--back" {{action "changeSong" "reverse"}}>
+        <i class="fa fa-step-backward fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="music-player__title">
+        <strong>{{currentSong.song}}</strong>
+        {{currentSong.artist}}
+      </div>
+      <div class="music-player__nav music-player__nav--forward" {{action "changeSong" "advance"}}>
+        <i class="fa fa-step-forward fa-2x" aria-hidden="true"></i>
+      </div>
+    {{else}}
+      <div class="row music-player__song-list">
+        {{#each renderedMusicOptions as |song|}}
+          <div class="col-sm-12 col-md-6 music-player__song-list__song" {{action "setVid" song}}>
+            <div class="music-player__song-list__button">
+              {{song.artist}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/unless}}
+  </div>
+</div>

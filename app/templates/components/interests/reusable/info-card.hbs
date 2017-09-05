@@ -3,9 +3,7 @@
     <h3>{{infoHeader}}</h3>
   </div>
   <div class="info-card__card__picture info-card__card__picture--{{if showImage "shown" "hidden"}} {{if expandImage "info-card__card__picture--expanded"}}">
-    {{#unless imageDoesNotExist}}
       <img src="assets/images/{{infoImg}}" />
-    {{/unless}}
   </div>
   <div class="info-card__card__details info-card__card__details--{{if showDetails "shown" "hidden"}} {{if expandDetails "info-card__card__details--expanded"}} info-card__card__details--{{if detailOverflow "flow" "no-flow"}}">
     <i class="fa {{if isExpanded "fa-minus-circle" "fa-plus-circle"}} info-card__card__toggle" 
